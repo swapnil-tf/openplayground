@@ -1,11 +1,7 @@
 # ==== FRONTEND ====
-FROM node:19-alpine AS builder
+FROM node:19 AS builder
 
 WORKDIR /frontend
-
-# Install Python and build dependencies
-RUN apk add --no-cache python2 make g++
-RUN ln -sf python2 /usr/bin/python
 
 # Copy the package.json and install dependencies
 COPY app/package*.json ./
